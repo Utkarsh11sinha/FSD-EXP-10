@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiment 06 | Blog Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="layout">
+    <section class="hero">
+      <div>
+        <p class="tag">Experiment 06</p>
+        <h1>Blog Platform with Profiles and Comments</h1>
+        <p class="intro">
+          A client-side full-stack style demo with authentication state, protected actions,
+          post ownership, and relational comments.
+        </p>
+      </div>
+      <div class="hero-note">
+        <strong>Demo credentials</strong>
+        <span>Email: alex@blog.demo</span>
+        <span>Password: password123</span>
+      </div>
+    </section>
+
+    <section class="content-grid">
+      <aside class="panel sidebar">
+        <div class="auth-tabs">
+          <button class="tab-button active" data-tab="login">Login</button>
+          <button class="tab-button" data-tab="signup">Sign Up</button>
+        </div>
+
+        <form id="loginForm" class="auth-form active">
+          <h2>Welcome Back</h2>
+          <label>Email<input id="loginEmail" type="email" required></label>
+          <label>Password<input id="loginPassword" type="password" required></label>
+          <button type="submit">Login</button>
+        </form>
+
+        <form id="signupForm" class="auth-form">
+          <h2>Create Account</h2>
+          <label>Name<input id="signupName" type="text" required></label>
+          <label>Email<input id="signupEmail" type="email" required></label>
+          <label>Bio<textarea id="signupBio" rows="3" required></textarea></label>
+          <label>Password<input id="signupPassword" type="password" required></label>
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="profile-card" id="profileCard"></div>
+        <div id="authMessage" class="status-message"></div>
+      </aside>
+
+      <section class="main-column">
+        <article class="panel composer">
+          <div class="section-head">
+            <div>
+              <p class="tag">Protected Route</p>
+              <h2>Write a Blog Post</h2>
+            </div>
+          </div>
+          <form id="postForm">
+            <input id="postTitle" type="text" placeholder="Post title" required>
+            <textarea id="postBody" rows="5" placeholder="Write your thoughts..." required></textarea>
+            <div class="composer-actions">
+              <button type="submit" id="submitPost">Publish Post</button>
+              <button type="button" class="ghost-btn" id="resetPost">Reset</button>
+            </div>
+          </form>
+        </article>
+
+        <article class="panel">
+          <div class="section-head">
+            <div>
+              <p class="tag">Community Feed</p>
+              <h2>Recent Posts</h2>
+            </div>
+          </div>
+          <div id="postFeed" class="post-feed"></div>
+        </article>
+      </section>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
